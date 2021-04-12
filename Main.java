@@ -1,23 +1,39 @@
+import java.util.Scanner;
+
 public class Main{
 
     public static void main(String[] args) {
         
         Vocabolo vocabolario = new Vocabolo();
 
-        try{
+        System.out.print("Inserire la stringa da processare, inserisci 'exit' per terminare l'input: ");
+            
+        Scanner input = new Scanner(System.in);
 
-            //vocabolario.processaRiga("Oggi ho mangiato, che dici, mangi pure tu oggi?");
+        String str = input.nextLine();
 
-            vocabolario.processaRiga(null);
+        while(!str.equalsIgnoreCase("exit")){
 
-        } catch (EmptyStringException e){
+            try{
 
-            System.err.println(e.getMessage());
+                vocabolario.processaRiga(str);
+
+            } catch (EmptyStringException e){
+
+                System.err.println(e.getMessage());
+
+            }
+
+            str = input.nextLine();
 
         }
-        
-        
+
+        System.out.println("\n---RISULTATI---\n");
+
         System.out.println(vocabolario);
+
+        input.close();
+
     }
 
 }

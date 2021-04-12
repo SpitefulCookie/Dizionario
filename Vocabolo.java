@@ -11,8 +11,6 @@ public class Vocabolo {
     }
 
     public void processaRiga(String riga) throws EmptyStringException {
-        // 'riga' è una riga di testo
-                                                // NOTA: e se ci fossero parole con l'apostrofo?
     
         if(riga==null){
 
@@ -48,7 +46,6 @@ public class Vocabolo {
 
         }
             
-        
     }
 
     public String toString(){
@@ -72,4 +69,5 @@ public class Vocabolo {
         return output;
 
     }
+    
 }
